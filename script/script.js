@@ -59,7 +59,7 @@ var dog = /** @class */ (function (_super) {
 var array = [];
 new cat("Athos", 5, "male", "small", true, "../img/athos.jpg", "Brittish Shorthair", "Cream", "https://www.dailypaws.com/cats-kittens/cat-breeds/british-shorthair");
 new cat("Blacky", 2, "male", "medium", true, "../img/blacky.jpg", "Maine Coon", "White", "https://www.dailypaws.com/cats-kittens/cat-breeds/maine-coon");
-new cat("Chip", 4, "female", "small", false, "../img/chip.jpg", "European Shorthair", "Orange Tabby", "https://www.dailypaws.com/cats-kittens/cat-breeds/european-shorthair");
+new cat("Chip", 4, "male", "small", false, "../img/chip.jpg", "European Shorthair", "Orange Tabby", "https://www.dailypaws.com/cats-kittens/cat-breeds/european-shorthair");
 new dog("Pablo", 6, "male", "medium", true, "../img/pablo.jpg", "French Bulldog", "yes", "https://www.dailypaws.com/dogs-puppies/dog-breeds/french-bulldog");
 new dog("Dingo", 3, "male", "large", false, "../img/dingo.jpg", "Standard Schnautzer", "yes", "https://www.dailypaws.com/dogs-puppies/dog-breeds/standard-schnauzer");
 new dog("Lucky", 2, "female", "small", true, "../img/lucky.jpg", "Pembroke Welsh Corgi", "no", "https://www.dailypaws.com/dogs-puppies/dog-breeds/pembroke-welsh-corgi");
