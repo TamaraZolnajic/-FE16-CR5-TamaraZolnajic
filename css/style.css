@@ -1,11 +1,16 @@
 
 #hero {
-    height: 70vh;
     text-align: center;
-    background-image: url(../img/background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
     margin-bottom: 2%;
+}
+.backgroundimg{
+    height: 80vh;
+}
+.bgimg{
+    height: 100%;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
 }
 #cardid{
     text-align: center;
@@ -30,3 +35,9 @@
 .font-cont{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+@media (max-width: 768px) {
+    .card-img-top {
+      display: none;
+    }
+  }

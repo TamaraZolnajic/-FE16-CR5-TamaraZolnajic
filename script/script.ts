@@ -14,7 +14,7 @@ class Animal {
     this.image=image
     array.push(this);
     }
-    printInfo () {
+    displayInfo () {
         return `
         <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
             <div class="card card-decor" style="width: 22rem;">
@@ -42,7 +42,7 @@ class cat extends Animal {
     this.URLbreed = URLbreed;
     }
     
-    printInfo () {
+    displayInfo () {
         return `
         <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
             <div class="card card-decor" style="width: 22rem;">
@@ -74,7 +74,7 @@ class dog extends Animal {
     this.URLbreed = URLbreed;
     }
     
-    printInfo () {
+    displayInfo () {
         return `
         <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
             <div class="card card-decor" style="width: 22rem;">
@@ -106,6 +106,19 @@ new dog("Lucky", 2, "female", "small",true, "../img/lucky.jpg", "Pembroke Welsh 
 new Animal("Grape", 4, "female", "small",false, "../img/grape.jpg");
 new Animal("Snowball", 1, "female", "small",false, "../img/snowball.jpg");
 
-for (let val of array) {
-    (document.getElementsByClassName("result")[0] as HTMLElement).innerHTML += val.printInfo();
-  }
+
+(document.querySelector(".sorting") as HTMLElement).addEventListener("click", agesort);
+function agesort () {
+    
+    array.sort(function(min, max) {
+        return min.age - max.age});
+    (document.querySelector(".result") as HTMLElement).innerHTML ="";
+    cards();
+};
+function cards() {
+    
+    array.forEach((val) => {
+        (document.querySelector(".result") as HTMLElement).innerHTML += val.displayInfo();
+    });
+}
+cards();

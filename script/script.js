@@ -23,7 +23,7 @@ var Animal = /** @class */ (function () {
         this.image = image;
         array.push(this);
     }
-    Animal.prototype.printInfo = function () {
+    Animal.prototype.displayInfo = function () {
         return "\n        <div class=\"col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center\">\n            <div class=\"card card-decor\" style=\"width: 22rem;\">\n                <img src=\"".concat(this.image, "\" class=\"card-img-top\" style=\"height:22rem; object-fit:cover\">\n                <div class=\"text-center bg-dark text-white p-1\">").concat(this.name, "</div>\n                <div class=\"card-body\">\n                  <p class=\"card-text\">Gender: ").concat(this.gender, "</p>\n                  <p class=\"card-text\">Age: ").concat(this.age, "</p>\n                  <p class=\"card-text\">Size: ").concat(this.size, "</p> \n                  <h1 class=\"text-center btn d-flex justify-content-center bg-").concat(this.vaccine ? "success" : "danger", "\">Vaccine: ").concat(this.vaccine, "</h1>\n                </div>\n              </div>\n        </div>");
     };
     return Animal;
@@ -37,7 +37,7 @@ var cat = /** @class */ (function (_super) {
         _this.URLbreed = URLbreed;
         return _this;
     }
-    cat.prototype.printInfo = function () {
+    cat.prototype.displayInfo = function () {
         return "\n        <div class=\"col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center\">\n            <div class=\"card card-decor\" style=\"width: 22rem;\">\n                <img src=\"".concat(this.image, "\" class=\"card-img-top\" style=\"height:22rem; object-fit:cover\">\n                <div class=\"card-title text-center bg-dark text-white p-1\">").concat(this.name, "</div>\n                <div class=\"card-body\">\n                    <p class=\"card-text\">Gender: ").concat(this.gender, "</p>\n                    <p class=\"card-text\">Age: ").concat(this.age, "</p>\n                    <p class=\"card-text\">Size: ").concat(this.size, "</p>\n                    <h1 class=\"text-center btn d-flex justify-content-center bg-").concat(this.vaccine ? "success" : "danger", "\">Vaccine: ").concat(this.vaccine, "</h1>\n                    <p class=\"card-text\">Breed: ").concat(this.breed, "</p>\n                    <p class=\"card-text\">Fur color: ").concat(this.furColor, "</p>\n                    <p class=\"card-text text-center\">Breed info: \n                    <a href=\"\">").concat(this.URLbreed, "</a>\n                </div>  \n            </div>\n        </div>");
     };
     return cat;
@@ -51,7 +51,7 @@ var dog = /** @class */ (function (_super) {
         _this.URLbreed = URLbreed;
         return _this;
     }
-    dog.prototype.printInfo = function () {
+    dog.prototype.displayInfo = function () {
         return "\n        <div class=\"col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center\">\n            <div class=\"card card-decor\" style=\"width: 22rem;\">\n                <img src=\"".concat(this.image, "\" class=\"card-img-top\" style=\"height:22rem; object-fit:cover\">\n                <div class=\"card-title text-center bg-dark text-white p-1\">").concat(this.name, "</div>\n                <div class=\"card-body\">\n                    <p class=\"card-text\">Gender: ").concat(this.gender, "</p>\n                    <p class=\"card-text\">Age: ").concat(this.age, "</p>\n                    <p class=\"card-text\">Size: ").concat(this.size, "</p>\n                    <h1 class=\"text-center btn d-flex justify-content-center bg-").concat(this.vaccine ? "success" : "danger", "\">Vaccine: ").concat(this.vaccine, "</h1>\n                    <p class=\"card-text\">Breed: ").concat(this.breed, "</p>\n                    <p class=\"card-text\">Training Skills: ").concat(this.trainingSkills, "</p>\n                    <p class=\"card-text text-center\">Breed info: \n                    <a href=\"\">").concat(this.URLbreed, "</a>\n                </div>  \n            </div>\n        </div>");
     };
     return dog;
@@ -65,7 +65,18 @@ new dog("Dingo", 3, "male", "large", false, "../img/dingo.jpg", "Standard Schnau
 new dog("Lucky", 2, "female", "small", true, "../img/lucky.jpg", "Pembroke Welsh Corgi", "no", "https://www.dailypaws.com/dogs-puppies/dog-breeds/pembroke-welsh-corgi");
 new Animal("Grape", 4, "female", "small", false, "../img/grape.jpg");
 new Animal("Snowball", 1, "female", "small", false, "../img/snowball.jpg");
-for (var _i = 0, array_1 = array; _i < array_1.length; _i++) {
-    var val = array_1[_i];
-    document.getElementsByClassName("result")[0].innerHTML += val.printInfo();
+document.querySelector(".sorting").addEventListener("click", agesort);
+function agesort() {
+    array.sort(function (min, max) {
+        return min.age - max.age;
+    });
+    document.querySelector(".result").innerHTML = "";
+    cards();
 }
+;
+function cards() {
+    array.forEach(function (val) {
+        document.querySelector(".result").innerHTML += val.displayInfo();
+    });
+}
+cards();
