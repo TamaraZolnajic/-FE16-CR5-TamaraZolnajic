@@ -18,8 +18,8 @@ class Animal {
         return `
         <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
             <div class="card card-decor" style="width: 22rem;">
-                <img src="${this.image}" class="card-img-top" style="height:22rem; object-fit:cover">
-                <div class="text-center bg-dark text-white p-1">${this.name}</div>
+                <img src="${this.image}" class="card-img-top" style="height:25rem; object-fit:cover">
+                <div class="card-title text-center bg-dark text-white p-1">${this.name}</div>
                 <div class="card-body">
                   <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
                   <p class="card-text"><strong>Age:</strong> ${this.age}</p>
@@ -46,7 +46,7 @@ class cat extends Animal {
         return `
         <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
             <div class="card card-decor" style="width: 22rem;">
-                <img src="${this.image}" class="card-img-top" style="height:22rem; object-fit:cover">
+                <img src="${this.image}" class="card-img-top" style="height:25rem; object-fit:cover">
                 <div class="card-title text-center bg-dark text-white p-1">${this.name}</div>
                 <div class="card-body">
                     <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
@@ -55,7 +55,7 @@ class cat extends Animal {
                     <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine: ${this.vaccine}</h1>
                     <p class="card-text"><strong>Breed:</strong> ${this.breed}</p>
                     <p class="card-text"><strong>Fur color:</strong> ${this.furColor}</p>
-                    <p class="card-text text-center"><strong>Breed info: </strong>
+                    <p class="card-text"><strong>Breed info: </strong>
                     <a href="">${this.URLbreed}</a>
                 </div>  
             </div>
@@ -78,7 +78,7 @@ class dog extends Animal {
         return `
         <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
             <div class="card card-decor" style="width: 22rem;">
-                <img src="${this.image}" class="card-img-top" style="height:22rem; object-fit:cover">
+                <img src="${this.image}" class="card-img-top" style="height:25rem; object-fit:cover">
                 <div class="card-title text-center bg-dark text-white p-1">${this.name}</div>
                 <div class="card-body">
                     <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
@@ -87,7 +87,7 @@ class dog extends Animal {
                     <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine: ${this.vaccine}</h1>
                     <p class="card-text"><strong>Breed:</strong> ${this.breed}</p>
                     <p class="card-text"><strong>Training Skills:</strong> ${this.trainingSkills}</p>
-                    <p class="card-text text-center"><strong>Breed info:</strong> 
+                    <p class="card-text"><strong>Breed info:</strong> 
                     <a href="">${this.URLbreed}</a>
                 </div>  
             </div>
