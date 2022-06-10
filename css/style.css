@@ -16,9 +16,18 @@ body{
     object-fit: cover;
     
 }
+.greeter{
+    font-weight: bold;
+    position: absolute;
+    font-family: 'Allura', cursive;
+    margin:12% 0 0 4%;
+    font-size: 3rem;
+}
 #cardid{
     text-align: center;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
 }
 .navbar{
     height: 15%;
@@ -40,7 +49,7 @@ body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 780px) {
     .card-img-top {
       display: none;
     }

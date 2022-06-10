@@ -21,9 +21,9 @@ class Animal {
                 <img src="${this.image}" class="card-img-top" style="height:22rem; object-fit:cover">
                 <div class="text-center bg-dark text-white p-1">${this.name}</div>
                 <div class="card-body">
-                  <p class="card-text">Gender: ${this.gender}</p>
-                  <p class="card-text">Age: ${this.age}</p>
-                  <p class="card-text">Size: ${this.size}</p> 
+                  <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
+                  <p class="card-text"><strong>Age:</strong> ${this.age}</p>
+                  <p class="card-text"><strong>Size:</strong> ${this.size}</p> 
                   <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine: ${this.vaccine}</h1>
                 </div>
               </div>
@@ -35,10 +35,10 @@ class cat extends Animal {
     breed: string;
     furColor: string;
     URLbreed: string;
-    constructor(name: string, age: number, gender: string, size: string, vaccine: boolean, image: string, breed: string, furcolor: string, URLbreed: string) {
+    constructor(name: string, age: number, gender: string, size: string, vaccine: boolean, image: string, breed: string, furColor: string, URLbreed: string) {
         super(name, age, gender, size, vaccine, image);
         this.breed = breed;
-        this.furColor = furcolor;
+        this.furColor = furColor;
         this.URLbreed = URLbreed;
     }
 
@@ -49,13 +49,13 @@ class cat extends Animal {
                 <img src="${this.image}" class="card-img-top" style="height:22rem; object-fit:cover">
                 <div class="card-title text-center bg-dark text-white p-1">${this.name}</div>
                 <div class="card-body">
-                    <p class="card-text">Gender: ${this.gender}</p>
-                    <p class="card-text">Age: ${this.age}</p>
-                    <p class="card-text">Size: ${this.size}</p>
+                    <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
+                    <p class="card-text"><strong>Age:</strong> ${this.age}</p>
+                    <p class="card-text"><strong>Size:</strong> ${this.size}</p>
                     <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine: ${this.vaccine}</h1>
-                    <p class="card-text">Breed: ${this.breed}</p>
-                    <p class="card-text">Fur color: ${this.furColor}</p>
-                    <p class="card-text text-center">Breed info: 
+                    <p class="card-text"><strong>Breed:</strong> ${this.breed}</p>
+                    <p class="card-text"><strong>Fur color:</strong> ${this.furColor}</p>
+                    <p class="card-text text-center"><strong>Breed info: </strong>
                     <a href="">${this.URLbreed}</a>
                 </div>  
             </div>
@@ -81,13 +81,13 @@ class dog extends Animal {
                 <img src="${this.image}" class="card-img-top" style="height:22rem; object-fit:cover">
                 <div class="card-title text-center bg-dark text-white p-1">${this.name}</div>
                 <div class="card-body">
-                    <p class="card-text">Gender: ${this.gender}</p>
-                    <p class="card-text">Age: ${this.age}</p>
-                    <p class="card-text">Size: ${this.size}</p>
+                    <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
+                    <p class="card-text"><strong>Age:</strong> ${this.age}</p>
+                    <p class="card-text"><strong>Size:</strong> ${this.size}</p>
                     <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine: ${this.vaccine}</h1>
-                    <p class="card-text">Breed: ${this.breed}</p>
-                    <p class="card-text">Training Skills: ${this.trainingSkills}</p>
-                    <p class="card-text text-center">Breed info: 
+                    <p class="card-text"><strong>Breed:</strong> ${this.breed}</p>
+                    <p class="card-text"><strong>Training Skills:</strong> ${this.trainingSkills}</p>
+                    <p class="card-text text-center"><strong>Breed info:</strong> 
                     <a href="">${this.URLbreed}</a>
                 </div>  
             </div>
@@ -97,14 +97,14 @@ class dog extends Animal {
 
 let array: Array < Animal > = [];
 
-new cat("Athos", 5, "male", "small", true, "../img/athos.jpg", "Brittish Shorthair", "Cream", "https://www.dailypaws.com/cats-kittens/cat-breeds/british-shorthair");
-new cat("Blacky", 2, "male", "medium", true, "../img/blacky.jpg", "Maine Coon", "White", "https://www.dailypaws.com/cats-kittens/cat-breeds/maine-coon");
-new cat("Chip", 4, "male", "small", false, "../img/chip.jpg", "European Shorthair", "Orange Tabby", "https://www.dailypaws.com/cats-kittens/cat-breeds/european-shorthair");
-new dog("Pablo", 6, "male", "medium", true, "../img/pablo.jpg", "French Bulldog", "yes", "https://www.dailypaws.com/dogs-puppies/dog-breeds/french-bulldog");
-new dog("Dingo", 3, "male", "large", false, "../img/dingo.jpg", "Standard Schnautzer", "yes", "https://www.dailypaws.com/dogs-puppies/dog-breeds/standard-schnauzer");
-new dog("Lucky", 2, "female", "small", true, "../img/lucky.jpg", "Pembroke Welsh Corgi", "no", "https://www.dailypaws.com/dogs-puppies/dog-breeds/pembroke-welsh-corgi");
-new Animal("Grape", 4, "female", "small", false, "../img/grape.jpg");
-new Animal("Snowball", 1, "female", "small", false, "../img/snowball.jpg");
+new cat("Athos", 5, "Male", "Small", true, "../img/athos.jpg", "Brittish Shorthair", "Cream", "https://www.dailypaws.com/cats-kittens/cat-breeds/british-shorthair");
+new cat("Blacky", 2, "Male", "Medium", true, "../img/blacky.jpg", "Maine Coon", "White", "https://www.dailypaws.com/cats-kittens/cat-breeds/maine-coon");
+new cat("Chip", 4, "Male", "Small", false, "../img/chip.jpg", "European Shorthair", "Orange Tabby", "https://www.dailypaws.com/cats-kittens/cat-breeds/european-shorthair");
+new dog("Pablo", 6, "Male", "Medium", true, "../img/pablo.jpg", "French Bulldog", "yes", "https://www.dailypaws.com/dogs-puppies/dog-breeds/french-bulldog");
+new dog("Dingo", 3, "Male", "Large", false, "../img/dingo.jpg", "Standard Schnautzer", "yes", "https://www.dailypaws.com/dogs-puppies/dog-breeds/standard-schnauzer");
+new dog("Lucky", 2, "Female", "Small", true, "../img/lucky.jpg", "Pembroke Welsh Corgi", "no", "https://www.dailypaws.com/dogs-puppies/dog-breeds/pembroke-welsh-corgi");
+new Animal("Grape", 4, "Female", "Small", false, "../img/grape.jpg");
+new Animal("Snowball", 1, "Female", "Small", false, "../img/snowball.jpg");
 
 
 (document.querySelector(".sorting") as HTMLElement).addEventListener("click", agesort);
