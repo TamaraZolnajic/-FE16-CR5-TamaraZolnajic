@@ -24,7 +24,7 @@ class Animal {
                   <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
                   <p class="card-text"><strong>Age:</strong> ${this.age}</p>
                   <p class="card-text"><strong>Size:</strong> ${this.size}</p> 
-                  <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine: ${this.vaccine}</h1>
+                  <button type="" class=" btn-success w-100 rounded-pill vaccine-btn">${this.vaccine}</button>
                 </div>
               </div>
         </div>`;
@@ -52,7 +52,7 @@ class cat extends Animal {
                     <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
                     <p class="card-text"><strong>Age:</strong> ${this.age}</p>
                     <p class="card-text"><strong>Size:</strong> ${this.size}</p>
-                    <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine: ${this.vaccine}</h1>
+                    <button type="" class=" btn-success w-100 rounded-pill vaccine-btn">${this.vaccine}</button>
                     <p class="card-text"><strong>Breed:</strong> ${this.breed}</p>
                     <p class="card-text"><strong>Fur color:</strong> ${this.furColor}</p>
                     <p class="card-text"><strong>Breed info: </strong>
@@ -84,7 +84,7 @@ class dog extends Animal {
                     <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
                     <p class="card-text"><strong>Age:</strong> ${this.age}</p>
                     <p class="card-text"><strong>Size:</strong> ${this.size}</p>
-                    <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine: ${this.vaccine}</h1>
+                    <button type="" class=" btn-success w-100 rounded-pill vaccine-btn">${this.vaccine}</button>
                     <p class="card-text"><strong>Breed:</strong> ${this.breed}</p>
                     <p class="card-text"><strong>Training Skills:</strong> ${this.trainingSkills}</p>
                     <p class="card-text"><strong>Breed info:</strong> 
@@ -107,9 +107,10 @@ new Animal("Grape", 4, "Female", "Small", false, "../img/grape.jpg");
 new Animal("Snowball", 1, "Female", "Small", false, "../img/snowball.jpg");
 
 
-(document.querySelector(".sorting") as HTMLElement).addEventListener("click", agesort);
 
-function agesort() {
+(document.querySelector(".sorting") as HTMLElement).addEventListener("click", sortByAge);
+
+function sortByAge() {
 
     array.sort(function (min, max) {
         return min.age - max.age
