@@ -44,6 +44,7 @@ body {
 .greeter:hover { font-size: 5em; color: black; }
 
 #cardid {
+    margin: 2% 0 2% 0;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
@@ -55,7 +56,7 @@ body {
 }
 
 .card-decor {
-    margin: 4% 0;
+    margin: 2% 0 10% 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
 }
 
@@ -82,6 +83,17 @@ body {
     margin-bottom: 5%;
 }
 
+#messages{
+    text-align: center;
+    color: #A8483E;
+    font-family: 'Indie Flower', cursive;
+    margin-bottom: 5%;
+}
+
+#messageid{
+    padding: 3% 0 2% 0 ;
+}
+
 @media (max-width: 780px) {
     .card-img-top {
         display: none; 
@@ -90,4 +102,7 @@ body {
         font-size: 3rem;
     }
     .greeter:hover {font-size: 3rem; }
+    #messages {
+        display: none;
+    }
 }
