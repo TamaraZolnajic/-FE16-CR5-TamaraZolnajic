@@ -41,7 +41,7 @@ body {
     transition: all .5s ease;
 }
 
-h1:hover { font-size: 5em; color: black; }
+.greeter:hover { font-size: 5em; color: black; }
 
 #cardid {
     text-align: center;
@@ -84,6 +84,10 @@ h1:hover { font-size: 5em; color: black; }
 
 @media (max-width: 780px) {
     .card-img-top {
-        display: none;
+        display: none; 
     }
+    .greeter {
+        font-size: 3rem;
+    }
+    .greeter:hover {font-size: 3rem; }
 }
