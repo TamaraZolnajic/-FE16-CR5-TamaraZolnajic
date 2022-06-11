@@ -19,7 +19,7 @@ class Animal {
                   <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
                   <p class="card-text"><strong>Age:</strong> ${this.age}</p>
                   <p class="card-text"><strong>Size:</strong> ${this.size}</p> 
-                  <button type="" class=" btn-success w-100 rounded-pill vaccine-btn">${this.vaccine}</button>
+                  <div class="vaccine"><button type="" class=" btn-success w-100 rounded-pill vaccine-btn">${this.vaccine}</button></div>
                 </div>
               </div>
         </div>`;
@@ -42,7 +42,7 @@ class cat extends Animal {
                     <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
                     <p class="card-text"><strong>Age:</strong> ${this.age}</p>
                     <p class="card-text"><strong>Size:</strong> ${this.size}</p>
-                    <button type="" class=" btn-success w-100 rounded-pill vaccine-btn">${this.vaccine}</button>
+                    <div class="vaccine"><button type="" class=" btn-success w-100 rounded-pill vaccine-btn">${this.vaccine}</button></div>
                     <p class="card-text"><strong>Breed:</strong> ${this.breed}</p>
                     <p class="card-text"><strong>Fur color:</strong> ${this.furColor}</p>
                     <p class="card-text"><strong>Breed info: </strong>
@@ -69,7 +69,7 @@ class dog extends Animal {
                     <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
                     <p class="card-text"><strong>Age:</strong> ${this.age}</p>
                     <p class="card-text"><strong>Size:</strong> ${this.size}</p>
-                    <button type="" class=" btn-success w-100 rounded-pill vaccine-btn">${this.vaccine}</button>
+                    <div class="vaccine"><button type="" class=" btn-success w-100 rounded-pill vaccine-btn">${this.vaccine}</button></div>
                     <p class="card-text"><strong>Breed:</strong> ${this.breed}</p>
                     <p class="card-text"><strong>Training Skills:</strong> ${this.trainingSkills}</p>
                     <p class="card-text"><strong>Breed info:</strong> 
@@ -89,17 +89,49 @@ new dog("Lucky", 2, "Female", "Small", true, "../img/lucky.jpg", "Pembroke Welsh
 new Animal("Grape", 4, "Female", "Small", false, "../img/grape.jpg");
 new Animal("Snowball", 1, "Female", "Small", false, "../img/snowball.jpg");
 document.querySelector(".sorting").addEventListener("click", sortByAge);
-function sortByAge() {
-    array.sort(function (min, max) {
-        return min.age - max.age;
-    });
-    document.querySelector(".result").innerHTML = "";
-    cards();
-}
-;
+const vaccineBtn = document.getElementsByClassName("vaccine-btn");
 function cards() {
     array.forEach((val) => {
         document.querySelector(".result").innerHTML += val.displayInfo();
     });
 }
 cards();
+function displayButton() {
+    for (let i = 0; i < vaccineBtn.length; i++) {
+        if (array[i].vaccine === true) {
+            document.getElementsByClassName("vaccine")[i].innerHTML = `<button type="" class="btn btn-success w-100 rounded-pill vaccine-btn"><h4>Vaccine <i class="bi bi-award"></i></h4></button>`;
+        }
+        else if (array[i].vaccine === false) {
+            document.getElementsByClassName("vaccine")[i].innerHTML = `<button type="" class="btn btn-danger w-100 rounded-pill vaccine-btn"><h4>Vaccine <i class="bi bi-clipboard-x"></i></h4></button>`;
+        }
+        ;
+    }
+    ;
+    checkVaccine();
+}
+;
+displayButton();
+function checkVaccine() {
+    for (let i = 0; i < vaccineBtn.length; i++) {
+        vaccineBtn[i].addEventListener("click", function () {
+            if (array[i].vaccine == true) {
+                array[i].vaccine = false;
+            }
+            else if (array[i].vaccine == false) {
+                array[i].vaccine = true;
+            }
+            displayButton();
+        });
+    }
+    ;
+}
+;
+function sortByAge() {
+    array.sort(function (min, max) {
+        return min.age - max.age;
+    });
+    document.querySelector(".result").innerHTML = "";
+    cards();
+    displayButton();
+}
+;
